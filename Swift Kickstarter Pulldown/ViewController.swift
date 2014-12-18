@@ -12,7 +12,8 @@ let kHeaderHeight:CGFloat = 200
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
                             
-    @IBOutlet var tableView: UITableView
+    @IBOutlet var tableView: UITableView!
+
     let imageView: UIImageView = UIImageView(image: UIImage(named: "Brain"))
 
     override func viewDidLoad() {
@@ -34,13 +35,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.didReceiveMemoryWarning()
     }
 
-    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 20
     }
     
-    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "Cell")
-        cell.textLabel.text = "Item \(indexPath.row + 1)"
+        cell.textLabel?.text = "Item \(indexPath.row + 1)"
         return cell
     }
     
